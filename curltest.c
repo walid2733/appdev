@@ -17,13 +17,13 @@ int main(int argc, char **argv){
 		curl_easy_setopt(c, CURLOPT_URL, "http://www.cc.puv.fi/~e1800937/curl.php");
 		curl_easy_setopt(c, CURLOPT_POSTFIELDS, poststr);
 		res = curl_easy_perform(c);
-	if(res != CURLE_OK)
-		printf("Error in curl_easy_perform().\n");
-	else
-		printf("Post data is sent\n");
+		if(res != CURLE_OK)
+			printf("Error in curl_easy_perform().\n");
+		else
+			printf("Post data is sent\n");
 
-	curl_easy_cleanup(c);
-	}
-	curl_global_cleanup();
-	return 0;
+		curl_easy_cleanup(c);
+		}
+		curl_global_cleanup();
+		return 0;
 }
