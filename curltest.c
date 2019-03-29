@@ -23,7 +23,7 @@ int main(int argc, char **argv){
 			printf("Post data is sent\n");
 
 		curl_easy_cleanup(c);
-		}
-		curl_global_cleanup();
-		return 0;
+	}
+	curl_global_cleanup();
+	return 0;
 }
