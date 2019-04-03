@@ -1,6 +1,6 @@
 // Constants defination
 #define RATE 16000	//samples per second
-
+#define CMD "arecord -r16000 -c1 -f S16_LE -d1 -q test.wav"
 // dtata structures
 struct WAVHDR{
 	char ChunkID[4];	//it has to be "RIFF"
@@ -8,7 +8,7 @@ struct WAVHDR{
 	char Format[4];		// it has to be "WAVE"
 
 	char Subchunk1ID[4];	//"fmt"
-	int SubchunkSize;	//PCM = 16
+	int Subchunk1Size;	//PCM = 16
 	short AudioFormat;	//should be 1
 	short NumChannels;	// should be 1 for mono
 	int SampleRate;		//16000
@@ -20,3 +20,5 @@ struct WAVHDR{
 	int Subchunk2Size;	//
 };
 // Function declaras
+void displayWAVHDR(struct WAVHDR h);
+void displayWAVDATA(short []);
