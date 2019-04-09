@@ -1,12 +1,17 @@
 #include<stdio.h>
+#include"screen.h"
 
 void barChart(int a[])
 {
 	int i, j;	//counters
 	for(i=0; i<80; i++){	//for 80 columns
 		for(j=0; j<a[i]/3; j++){
-			printf("\033[%d;%dH", j+1, i+1);
+			printf("\033[%d;%dH", 35-j, i+1);
+#ifdef UNICODE	// conditional compiling
 			printf("%s", "\u2590");
+#else
+			printf("%c", ' ');
+#endif
 		}
 	}
 }

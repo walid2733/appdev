@@ -16,7 +16,7 @@ int main(){
 		if(f == NULL){
 			printf("cannot open the wav file\n");
 			return 1;
-}
+		}
 		struct WAVHDR h;	//instance of wav header
 		fread(&h, sizeof(h), 1, f);	//read wav header to h
 		displayWAVHDR(h);	//show wav header information
