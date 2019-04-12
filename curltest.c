@@ -21,12 +21,12 @@ int main( int argc, char **argv)
 		curl_easy_setopt(c, CURLOPT_URL, "http://www.cc.puv.fi/~e1700687/curl.php");
 		curl_easy_setopt(c, CURLOPT_POSTFIELDS, poststr);
 		res = curl_easy_perform(c);
-	if(res != CURLE_OK)
-		printf("Communication is not OK\n");
-	else
-		printf("Data is sent\n");
+		if(res != CURLE_OK)
+			printf("Communication is not OK\n");
+		else
+			printf("Data is sent\n");
 
-	curl_easy_cleanup(c);
+		curl_easy_cleanup(c);
 	}
 	curl_global_cleanup();
 	return 0;

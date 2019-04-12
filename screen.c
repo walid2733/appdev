@@ -5,17 +5,17 @@ void barChart(int a[])
 {
 	int i, j; 		// counters
 	for(i=0; i<80; i++)		// for 80 coloumns
-		{
+	{
 		for(j=0; j<a[i]/3; j++)
-			{
+		{
 			printf("\033[%d;%dH", 35-j, i+1);
 #ifdef UNICODE
-		printf("%s", "\u2590");
+			printf("%s", "\u2590");
 #else
-		printf("%c", ' ');
+			printf("%c", ' ');
 #endif
-			}
 		}
+	}
 }
 
 void clearScreen(void)
