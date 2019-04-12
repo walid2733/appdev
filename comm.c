@@ -26,7 +26,7 @@ void sendDATA(short s[])
 	CURLcode res;
 	char poststr[128];
 	//post string should be in "db=num1;num2;....;num8" format
-	sprintf(poststr, "db=%.2f;%.2f;%.2f;%.2f;%.2f;%.2f;%.2f;%.2f",db[0],db[1],db[2],db[3],db[4],db[5],db[6],db[7]);
+	sprintf(poststr, "db=%.2f;%%20%.2f;%%20%.2f;%%20%.2f;%%20%.2f;%%20%.2f;%%20%.2f;%%20%.2f",db[0],db[1],db[2],db[3],db[4],db[5],db[6],db[7]);
 #ifdef DEBUG
 	printf("poststr = %s\n", poststr);
 #endif
