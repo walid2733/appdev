@@ -5,15 +5,15 @@
 
 // this function gets in an array of decibel values and finds out the number of peaks in this array
 int findPeaks(int d[])
-	{
+{
 	int i, c=0;
 	for(i=1; i<80; i++)
-		{
+	{
 		if(d[i]>=75 && d[i-1]<75) c++;
-		}
+	}
 	if(d[0]>=75) c++;
 	return c;
-	}
+}
 
 // this function takes 1 second of samples (16000 in our  case) and calculate 80 pieces of  RMS value,
 // and then turn this values into decibels, and display them as a barchart
